@@ -5,6 +5,7 @@ jobs:
        - image: circleci/builder-base
      steps:
        - checkout
+       - setup_remote_docker
        - run: echo "hello world"
 
 workflows:
