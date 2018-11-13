@@ -6,3 +6,9 @@ jobs:
      steps:
        - checkout
        - run: echo "hello world"
+
+workflows:
+  version: 2
+  wfone:
+    jobs:
+      - one
