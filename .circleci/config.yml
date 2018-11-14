@@ -2,7 +2,10 @@ version: 2
 jobs:
    one:
      docker:
-       - image: circleci/build-image
+       - image: quay.io/azaka/ubuntu-user
+         auth:
+          username: $QUAY_USERNAME
+          password: $QUAY_PASSWORD
      steps:
        - checkout
        - setup_remote_docker
