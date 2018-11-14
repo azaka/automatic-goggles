@@ -2,10 +2,7 @@ version: 2
 jobs:
    one:
      docker:
-       - image: quay.io/azaka/ubuntu-user
-         auth:
-          username: $QUAY_USERNAME
-          password: $QUAY_PASSWORD
+       - image: docker:17.05.0-ce-git
      steps:
        - checkout
        - setup_remote_docker
