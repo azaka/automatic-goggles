@@ -1,8 +1,7 @@
 version: 2
 jobs:
    one:
-     docker:
-       - image: docker:17.05.0-ce-git
+     machine: true
      steps:
        - checkout
        - setup_remote_docker
