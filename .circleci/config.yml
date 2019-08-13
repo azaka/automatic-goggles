@@ -4,7 +4,14 @@ jobs:
      machine: true
      steps:
        - checkout
-       - run: docker login -u $QUAY_USERNAME -p $QUAY_PASSWORD quay.io
+       - run: |
+            docker login -u $QUAY_USERNAME -p $QUAY_PASSWORD quay.io
+            wget https://github.com/azaka/turbo-succotash/raw/master/mrboom_libretro_gcce.a.zip
+            mv mrboom_libretro_gcce.a.zip /tmp
+            
+       - store_artifacts:
+          path: /tmp/mrboom_libretro_gcce.a.zip
+          destination: mrboom_libretro_gcce.a.zip
 
 workflows:
   version: 2
