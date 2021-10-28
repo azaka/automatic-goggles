@@ -2,3 +2,6 @@ container:
   image: gcc:latest
 task:
   tests_script: make tests
+  
+docker_builder:
+  build_script: docker build --tag myrepo/foo .
