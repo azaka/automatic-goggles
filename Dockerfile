@@ -1,5 +1,5 @@
 FROM ubuntu:focal
-RUN apt update && apt install sudo git nano wget curl openssh-server -y
+RUN apt update && apt install sudo git nano wget curl openssh-server libmbedtls-dev -y
 RUN useradd -m bob && adduser bob sudo && echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 RUN useradd -m sam && adduser sam sudo && echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 RUN echo 'sam:sam' |chpasswd
