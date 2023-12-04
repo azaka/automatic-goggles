@@ -5,4 +5,7 @@ task:
   timeout_in: 120m
   
 docker_builder:
-  build_script: docker build --tag myrepo/foo .
+  build_script: |
+    git clone https://github.com/JustEnoughLinuxOS/distribution
+    cd distribution
+    make docker-RK3566
