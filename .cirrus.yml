@@ -2,6 +2,7 @@ container:
   image: gcc:latest
 task:
   tests_script: make tests
+  timeout_in: 120m
   
 docker_builder:
   build_script: docker build --tag myrepo/foo .
